@@ -229,12 +229,46 @@ main {
   padding: 1.875rem;
 }
 
+.profile-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .profile {
   width: 80px;
   height: 80px;
   border: 3px solid var(--pale-blue);
   border-radius: 50%;
-  margin-bottom: 40px;
+}
+
+.profile-header {
+  max-width: 100%;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 40rem) {
+  .profile-area {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .profile {
+    margin-bottom: 40px ;
+  }
+
+  .profile-header {
+    max-width: 5ch;
+  }
 }
 
 .time-line li {
