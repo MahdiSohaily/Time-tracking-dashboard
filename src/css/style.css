@@ -105,4 +105,56 @@ main {
   justify-content: center;
   align-items: center;
   background-color: var(--very-dark-blue);
+  height: 100vh;
+}
+
+/* component styles */
+.activity {
+  display: grid;
+  grid-template-areas: 'intro', 'work', 'play', 'study', 'exercise', 'social',
+    'self';
+  gap: 1rem;
+  flex: 1;
+  max-width: min(1110px, 95%);
+}
+
+.intro {
+  grid-area: intro;
+}
+
+.work {
+  grid-area: work;
+}
+
+.play {
+  grid-area: play;
+}
+
+.study {
+  grid-area: study;
+}
+
+.exercise {
+  grid-area: exercise;
+}
+
+.social {
+  grid-area: social;
+}
+
+@media screen and (min-width: 40em) {
+  .activity {
+    grid-template-areas: 'intro  work play   study'
+      'intro  exercise social self';
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: greenyellow;
+  padding: 1.875rem;
+}
+
+.card-body {
+  background-color: var(--dark-blue);
 }
