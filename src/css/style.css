@@ -8,8 +8,8 @@
   --bg-self: hsl(43, 84%, 65%);
   --very-dark-blue: hsl(226, 43%, 10%);
   --dark-blue: hsl(235, 46%, 20%);
-  --desaturated-blue: hsl(235, 45%, 61%);
-  --pale-blue: hsl(236, 100%, 87%);
+  --desaturated-blue: hsl(243, 100%, 82%);
+  --pale-blue: hsl(249, 100%, 99%);
 
   font-family: 'Rubik', sans-serif;
   --fs-base: 18px;
@@ -98,6 +98,46 @@ select {
 }
 
 /* utility classes */
+.primary-header {
+  color: var(--pale-blue);
+  font-size: 42px;
+  font-weight: var(--fw-300);
+  line-height: 1.2;
+}
+
+.text-desaturet {
+  color: var(--desaturated-blue);
+}
+
+.card-title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-500);
+  color: var(--pale-blue);
+}
+
+.text-de-blue {
+  color: var(--desaturated-blue);
+}
+
+.mb-1 {
+  margin-bottom: 10px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.mb-4 {
+  margin-bottom: 40px;
+}
+
+.mb-5 {
+  margin-bottom: 50px;
+}
+
+.mb-6 {
+  margin-bottom: 60px;
+}
 
 /* General style */
 main {
@@ -105,56 +145,111 @@ main {
   justify-content: center;
   align-items: center;
   background-color: var(--very-dark-blue);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* component styles */
 .activity {
   display: grid;
-  grid-template-areas: 'intro', 'work', 'play', 'study', 'exercise', 'social',
-    'self';
-  gap: 1rem;
+  grid-template-areas: 'intro' 'work' 'play' 'study' 'exercise' 'social' 'self';
+  gap: 2rem;
   flex: 1;
   max-width: min(1110px, 95%);
 }
 
-.intro {
-  grid-area: intro;
-}
-
-.work {
-  grid-area: work;
-}
-
-.play {
-  grid-area: play;
-}
-
-.study {
-  grid-area: study;
-}
-
-.exercise {
-  grid-area: exercise;
-}
-
-.social {
-  grid-area: social;
-}
-
 @media screen and (min-width: 40em) {
   .activity {
-    grid-template-areas: 'intro  work play   study'
-      'intro  exercise social self';
+    grid-template-areas:
+      'intro  work     play    study'
+      'intro  exercise social  self';
   }
 }
 
 .card {
   border-radius: 1rem;
-  background-color: greenyellow;
-  padding: 1.875rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  position: relative;
+}
+
+.card-bg {
+  position: absolute;
+  top: -10px;
+  right: 1.5rem;
+  height: 70px;
+}
+
+.title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card-body {
+  margin-top: 40px;
   background-color: var(--dark-blue);
+  padding: 1.875rem;
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+/* intro section styles */
+.intro {
+  grid-area: intro;
+  background-color: var(--dark-blue);
+}
+
+.intro .card-header {
+  background-color: var(--blue);
+  border-radius: 1rem;
+  padding: 1.875rem;
+}
+
+.profile {
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--pale-blue);
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+/* work section styles */
+.work {
+  grid-area: work;
+  background-color: var(--bg-work);
+}
+
+/* play section styles */
+.play {
+  grid-area: play;
+  background-color: var(--bg-play);
+}
+
+/* study section styles */
+.study {
+  grid-area: study;
+  background-color: var(--bg-study);
+}
+
+/* exercise section styles */
+.exercise {
+  grid-area: exercise;
+  background-color: var(--bg-exercise);
+}
+
+/* self section styles */
+.self {
+  grid-area: self;
+  background-color: var(--bg-self);
+}
+
+/* social */
+.social {
+  grid-area: social;
+  background-color: var(--bg-social);
 }
