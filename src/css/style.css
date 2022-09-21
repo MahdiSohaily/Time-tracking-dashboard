@@ -13,6 +13,22 @@
 
   font-family: 'Rubik', sans-serif;
   --fs-base: 18px;
+  /* font-weight */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+
+  /* spacing */
+  --size-100: 0.5rem;
+  --size-200: 1rem;
+  --size-300: 1.5rem;
+  --size-400: 2rem;
+  --size-500: 2.5rem;
+  --size-600: 3rem;
+  --size-700: 4rem;
+  --size-800: 5rem;
+  --size-900: 6rem;
+  --size-xl: 8rem;
 }
 /* Box sizing rules */
 *,
@@ -28,8 +44,8 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -68,9 +84,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -79,4 +95,14 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* utility classes */
+
+/* General style */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-dark-blue);
 }
