@@ -100,9 +100,9 @@ select {
 /* utility classes */
 .primary-header {
   color: var(--pale-blue);
-  font-size: 42px;
+  font-size: 44px;
   font-weight: var(--fw-300);
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .text-desaturet {
@@ -113,6 +113,10 @@ select {
   font-size: var(--fs-base);
   font-weight: var(--fw-500);
   color: var(--pale-blue);
+}
+
+.activity-title {
+  font-size: 50px;
 }
 
 .text-de-blue {
@@ -182,6 +186,7 @@ main {
   top: -10px;
   right: 1.5rem;
   height: 70px;
+  width: 70px;
 }
 
 .title-area {
@@ -191,10 +196,9 @@ main {
 }
 
 .card-body {
-  margin-top: 40px;
   background-color: var(--dark-blue);
   padding: 1.875rem;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   z-index: 2;
 }
 
@@ -206,7 +210,7 @@ main {
 
 .intro .card-header {
   background-color: var(--blue);
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   padding: 1.875rem;
 }
 
@@ -216,6 +220,10 @@ main {
   border: 3px solid var(--pale-blue);
   border-radius: 50%;
   margin-bottom: 40px;
+}
+
+.time-line li {
+  margin-block: 9px;
 }
 
 /* work section styles */
