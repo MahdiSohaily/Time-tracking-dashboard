@@ -159,6 +159,7 @@ main {
   gap: 2rem;
   flex: 1;
   max-width: min(1110px, 95%);
+  margin-block: 2rem;
 }
 
 @media screen and (min-width: 40em) {
@@ -200,6 +201,20 @@ main {
   padding: 1.875rem;
   border-radius: 0.8rem;
   z-index: 2;
+}
+
+.card-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 40em) {
+  .card-desc {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 /* intro section styles */
