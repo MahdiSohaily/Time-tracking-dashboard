@@ -168,6 +168,7 @@ main {
   grid-template-areas: 'intro' 'work' 'play' 'study' 'exercise' 'social' 'self';
   gap: 2rem;
   flex: 1;
+  grid-auto-columns: minmax(0, 1fr);
   max-width: min(1110px, 90%);
   margin-block: 2rem;
 }
