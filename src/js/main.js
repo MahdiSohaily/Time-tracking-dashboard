@@ -45,10 +45,11 @@ function updateTimeline(timeline = 'day') {
 }
 
 function updateCurrent(activity) {
-  const currentElem = document.querySelectorAll('.current');
+  const currentElem = document.querySelectorAll('.currentElem');
   const lastElem = document.querySelectorAll('.last');
-  for (let item in currentElem) {
-    currentElem[item].innerHTML = activity[item].data.current;
-    lastElem[item].innerHTML = activity[item].data.previous;
+  for (let item in currentElem.values()) {
+    console.log(activity[item].data.current)
+      lastElem[item].innerHTML = activity[item].data.previous;
+      currentElem[item].innerHTML = activity[item].data.current;
   }
 }
