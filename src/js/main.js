@@ -22,5 +22,9 @@ navigator.forEach((item) => {
 });
 
 function displayData(dataState = 'daily') {
-  console.log(dataState);
+  fetch('../../data.json')
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    });
 }
