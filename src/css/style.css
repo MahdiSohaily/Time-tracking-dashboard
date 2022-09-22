@@ -1,0 +1,361 @@
+:root {
+  --blue: hsl(246, 80%, 60%);
+  --bg-work: hsl(15, 100%, 70%);
+  --bg-play: hsl(195, 74%, 62%);
+  --bg-study: hsl(348, 100%, 68%);
+  --bg-exercise: hsl(145, 58%, 55%);
+  --bg-social: hsl(264, 64%, 52%);
+  --bg-self: hsl(43, 84%, 65%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(243, 100%, 82%);
+  --pale-blue: hsl(249, 100%, 99%);
+
+  font-family: 'Rubik', sans-serif;
+  --fs-base: 18px;
+  /* font-weight */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+
+  /* spacing */
+  --size-100: 0.5rem;
+  --size-200: 1rem;
+  --size-300: 1.5rem;
+  --size-400: 2rem;
+  --size-500: 2.5rem;
+  --size-600: 3rem;
+  --size-700: 4rem;
+  --size-800: 5rem;
+  --size-900: 6rem;
+  --size-xl: 8rem;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* utility classes */
+.primary-header {
+  color: var(--pale-blue);
+  font-size: 44px;
+  font-weight: var(--fw-300);
+  line-height: 1.1;
+}
+
+.text-desaturet {
+  color: var(--desaturated-blue);
+}
+
+.card-title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-500);
+  color: var(--pale-blue);
+}
+
+.activity-title {
+  font-size: 38px;
+}
+
+@media screen and (min-width: 40em) {
+  .activity-title {
+    font-size: 50px;
+  }
+}
+
+.text-de-blue {
+  color: var(--desaturated-blue);
+}
+
+.mb-1 {
+  margin-bottom: 10px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.mb-4 {
+  margin-bottom: 40px;
+}
+
+.mb-5 {
+  margin-bottom: 50px;
+}
+
+.mb-6 {
+  margin-bottom: 60px;
+}
+
+/* General style */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-dark-blue);
+  min-height: 100vh;
+}
+
+img[alt='icon-ellipsis'] {
+  cursor: pointer;
+}
+/* component styles */
+.activity {
+  display: grid;
+  grid-template-areas: 'intro' 'work' 'play' 'study' 'exercise' 'social' 'self';
+  gap: 2rem;
+  flex: 1;
+  grid-auto-columns: minmax(0, 1fr);
+  max-width: min(1110px, 90%);
+  margin-block: 2rem;
+}
+
+@media screen and (min-width: 40em) {
+  .activity {
+    grid-template-areas:
+      'intro  work    play    '
+      'intro  study   exercise   '
+      '.      social  self';
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .activity {
+    grid-template-areas:
+      'intro  work     play    study'
+      'intro  exercise social  self';
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  position: relative;
+}
+
+.card-bg {
+  position: absolute;
+  top: -10px;
+  right: 1.5rem;
+  height: 70px;
+  width: 70px;
+}
+
+.title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body {
+  background-color: var(--dark-blue);
+  padding: 1.875rem;
+  border-radius: 0.8rem;
+  z-index: 2;
+}
+
+.card-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 40em) {
+  .card-desc {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+/* intro section styles */
+.intro {
+  grid-area: intro;
+  background-color: var(--dark-blue);
+}
+
+.intro .card-header {
+  background-color: var(--blue);
+  border-radius: 0.8rem;
+  padding: 1.875rem;
+}
+
+.profile-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile {
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--pale-blue);
+  border-radius: 50%;
+}
+
+.profile-header {
+  max-width: 100%;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.custom-height {
+  height: 40px;
+}
+
+.time-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 9px;
+}
+
+.time-line li.active {
+  color: var(--pale-blue);
+}
+
+.time-line li:hover {
+  cursor: pointer;
+  color: var(--pale-blue);
+}
+
+@media screen and (min-width: 40rem) {
+  .profile-area {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .profile {
+    margin-bottom: 40px;
+  }
+
+  .profile-header {
+    max-width: 5ch;
+    font-size: 50px;
+    margin-bottom: 60px;
+  }
+
+  .time-line {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+/* work section styles */
+.work {
+  grid-area: work;
+  background-color: var(--bg-work);
+}
+
+/* play section styles */
+.play {
+  grid-area: play;
+  background-color: var(--bg-play);
+}
+
+/* study section styles */
+.study {
+  grid-area: study;
+  background-color: var(--bg-study);
+}
+
+/* exercise section styles */
+.exercise {
+  grid-area: exercise;
+  background-color: var(--bg-exercise);
+}
+
+/* self section styles */
+.self {
+  grid-area: self;
+  background-color: var(--bg-self);
+}
+
+/* social */
+.social {
+  grid-area: social;
+  background-color: var(--bg-social);
+}
