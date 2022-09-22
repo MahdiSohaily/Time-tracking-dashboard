@@ -51,6 +51,7 @@ function updateCurrent(activity) {
   const currentElem = document.querySelectorAll('.currentElem');
   const lastElem = document.querySelectorAll('.last');
   const size = currentElem.length;
+  // pass data to the UI
   for (let item = 0; item < size; item++) {
     lastElem[item].innerHTML = activity[item].data.previous;
     currentElem[item].innerHTML = activity[item].data.current;
