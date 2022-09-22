@@ -162,12 +162,16 @@ main {
   min-height: 100vh;
 }
 
+img[alt='icon-ellipsis'] {
+  cursor: pointer;
+}
 /* component styles */
 .activity {
   display: grid;
   grid-template-areas: 'intro' 'work' 'play' 'study' 'exercise' 'social' 'self';
   gap: 2rem;
   flex: 1;
+  grid-auto-columns: minmax(0, 1fr);
   max-width: min(1110px, 90%);
   margin-block: 2rem;
 }
@@ -285,9 +289,8 @@ main {
   gap: 9px;
 }
 
-.time-line li {
-  text-align: center;
-  flex: 1;
+.time-line li.active {
+  color: var(--pale-blue);
 }
 
 .time-line li:hover {
@@ -304,7 +307,7 @@ main {
   }
 
   .profile {
-    margin-bottom: 40px ;
+    margin-bottom: 40px;
   }
 
   .profile-header {
