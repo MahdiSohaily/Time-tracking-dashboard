@@ -175,6 +175,15 @@ main {
 @media screen and (min-width: 40em) {
   .activity {
     grid-template-areas:
+      'intro  work    play    '
+      'intro  study   exercise   '
+      '.      social  self';
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .activity {
+    grid-template-areas:
       'intro  work     play    study'
       'intro  exercise social  self';
   }
