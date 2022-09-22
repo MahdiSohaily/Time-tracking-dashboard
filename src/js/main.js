@@ -9,6 +9,7 @@ fetch('../data.json')
 navigator.forEach((item) => {
   item.addEventListener('click', (element) => {
     const { target } = element;
+    target.classList.toggle('active');
     const dataState = target.getAttribute('data-display').toLowerCase();
     switch (dataState) {
       case 'daily':
@@ -33,7 +34,7 @@ navigator.forEach((item) => {
 
 function displayData(dataState = 'daily') {
   const activity = new Activity(obj);
-  console.log(activity.activities());
+  updateCurrent(activity.activities(dataState));
 }
 
 function updateTimeline(timeline = 'day') {
@@ -41,4 +42,13 @@ function updateTimeline(timeline = 'day') {
   timelines.forEach((item) => {
     item.innerHTML = timeline;
   });
+}
+
+function updateCurrent(activity) {
+  const currentElem = document.querySelectorAll('.current');
+//   const lastElem = document.querySelectorAll('.last');
+  for (let item in currentElem) {
+    currentElem[item].innerHTML = activity[item].data.current;
+    // lastElem[item].innerHTML = activity[item].data.previous;
+  }
 }
