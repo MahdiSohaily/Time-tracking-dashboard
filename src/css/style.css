@@ -162,6 +162,9 @@ main {
   min-height: 100vh;
 }
 
+img[alt='icon-ellipsis'] {
+  cursor: pointer;
+}
 /* component styles */
 .activity {
   display: grid;
