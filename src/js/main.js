@@ -1,4 +1,11 @@
+import Activity from './modules/Activity.js';
 const navigator = document.querySelectorAll('.navigator');
+let obj = null;
+
+fetch('../data.json')
+  .then((res) => res.json())
+  .then((data) => (obj = data));
+
 navigator.forEach((item) => {
   item.addEventListener('click', (element) => {
     const { target } = element;
@@ -25,11 +32,8 @@ navigator.forEach((item) => {
 });
 
 function displayData(dataState = 'daily') {
-  fetch('../../data.json')
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data[0].timeframes);
-    });
+  const activity = new Activity(obj);
+  console.log(activity.activities());
 }
 
 function updateTimeline(timeline = 'day') {
