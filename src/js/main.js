@@ -46,9 +46,9 @@ function updateTimeline(timeline = 'day') {
 
 function updateCurrent(activity) {
   const currentElem = document.querySelectorAll('.current');
-//   const lastElem = document.querySelectorAll('.last');
+  const lastElem = document.querySelectorAll('.last');
   for (let item in currentElem) {
     currentElem[item].innerHTML = activity[item].data.current;
-    // lastElem[item].innerHTML = activity[item].data.previous;
+    lastElem[item].innerHTML = activity[item].data.previous;
   }
 }
