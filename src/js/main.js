@@ -4,7 +4,10 @@ let obj = null;
 
 fetch('../data.json')
   .then((res) => res.json())
-  .then((data) => (obj = data));
+  .then((data) => (obj = data))
+  .then(() => {
+    displayData();
+  });
 
 navigator.forEach((item) => {
   item.addEventListener('click', (element) => {
@@ -47,9 +50,9 @@ function updateTimeline(timeline = 'day') {
 function updateCurrent(activity) {
   const currentElem = document.querySelectorAll('.currentElem');
   const lastElem = document.querySelectorAll('.last');
-  for (let item in currentElem.values()) {
-    console.log(activity[item].data.current)
-      lastElem[item].innerHTML = activity[item].data.previous;
-      currentElem[item].innerHTML = activity[item].data.current;
+  const size = currentElem.length;
+  for (let item = 0; item < size; item++) {
+    lastElem[item].innerHTML = activity[item].data.previous;
+    currentElem[item].innerHTML = activity[item].data.current;
   }
 }
